@@ -1,0 +1,51 @@
+#include<stdio.h>
+int main()
+{
+	long long int t,x,y,no_of_1_steps,no_of_3_steps,dif,p,i;
+	scanf("%lld",&t);
+	while(t--)
+	{
+		no_of_1_steps=0;no_of_3_steps=0;i=0,p=0,dif=0;
+		scanf("%lld %lld",&x,&y);
+		if(x<0)
+		x=-x;
+		if(y<0)
+		y=-y;
+		if(x<=y)
+		{
+			i=2*x;
+			dif=y-x;
+			if(dif%2==0)
+			{	
+				p=dif/2;
+				no_of_1_steps=p*1;
+				no_of_3_steps=p*3;
+			}
+			else
+			{
+				p=dif/2+1;
+				no_of_1_steps=p*1;
+				no_of_3_steps=(dif-p)*3;
+			}
+		}
+		else
+		{
+			i=2*y;
+			dif=x-y;
+			if(dif%2==0)
+			{
+				p=dif/2;
+				no_of_1_steps=p*1;
+				no_of_3_steps=p*3;
+			}
+			else
+			{
+				p=dif/2+1;
+				no_of_3_steps=p*3;
+				no_of_1_steps=(dif-p)*1;
+			}
+		}
+		printf("%lld\n",no_of_1_steps+no_of_3_steps+i);
+	}
+	return 0;
+}

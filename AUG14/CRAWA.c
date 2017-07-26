@@ -1,0 +1,158 @@
+#include<stdio.h>
+int main()
+{
+	//your code goes here
+	int x,y,test;
+	scanf("%d",&test);
+	while(test--)
+	{
+		scanf("%d %d",&x,&y);
+		if(x==0 && y==0)//initially at origin
+		printf("YES\n");
+		else if(x==0 && y!=0)
+		{
+			if(y%2==0)
+			printf("YES\n");
+			else
+			printf("NO\n");
+		}
+		else if(y==0 && x!=0)
+		{
+			if(x>0)
+			{
+				if(x%2!=0)
+				printf("YES\n");
+				else
+				printf("NO\n");
+			}
+			else
+			{
+				if(x%2==0)
+				printf("YES\n");
+				else
+				printf("NO\n");
+			}
+		}
+		else if(x>0 && y>0)//this is for the 1 quad
+		{
+			if(x%2!=0)
+			{
+				if(y<=x+1)
+				printf("YES\n");
+				else
+				{
+					if(y%2==0)
+					printf("YES\n");
+					else
+					printf("NO\n");
+				}
+			}
+			else
+			{
+				if(y>x)
+				{
+					if(y%2==0)
+					printf("YES\n");
+					else
+					printf("NO\n");
+				}
+				else
+				printf("NO\n");
+			}
+		}
+		else if(x<0 && y>0)//this is for the 2 quad
+		{
+			if(x%2==0)
+			{
+				if(y<=-x)
+				{
+					printf("YES\n");
+				}
+				else
+				{
+					if(y%2==0)
+					printf("YES\n");
+					else
+					printf("NO\n");
+				}
+			}
+			else
+			{
+				if(y>-x)
+				{
+					if(y%2==0)
+					printf("YES\n");
+					else
+					printf("NO\n");
+				}
+				else
+				printf("NO\n");
+			}
+		}
+		else if(x<0 && y<0)//this is for the 3 quad
+		{
+			if(x%2==0)
+			{
+				if(y>=x)
+				printf("YES\n");
+				else
+				{
+					if(y%2==0)
+					printf("YES\n");
+					else
+					printf("NO\n");
+				}
+			}
+			else
+			{
+				if(y<x)
+				{
+					if(y%2==0)
+					printf("YES\n");
+					else
+					printf("NO\n");
+				}
+				else
+				{
+					printf("NO\n");
+				}
+			}
+		}
+		else if(x>0 && y<0)//this is for the 4 quad
+		{
+			if(x==1)
+			{
+				if(y%2==0)
+				printf("YES\n");
+				else
+				printf("NO\n");
+			}
+			else if(x%2!=0)
+			{
+				if(y>-x)
+				printf("YES\n");
+				else
+				{
+					if(y%2==0)
+					printf("YES\n");
+					else
+					printf("NO\n");
+				}
+			}
+			else
+			{
+				if(y<=-x)
+				{
+					if(y%2==0)
+					printf("YES\n");
+					else
+					printf("NO\n");
+				}
+				else 	
+				printf("NO\n");
+			}	
+		}
+		
+	}
+	return 0;
+}
